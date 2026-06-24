@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Branch",
+  "version": "1.0.0",
+  "description": "Adds a one-click copy button next to each branch in GitHub's branch switcher dropdown.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

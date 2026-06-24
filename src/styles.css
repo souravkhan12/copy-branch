@@ -1,0 +1,52 @@
+/* Copy Branch — injected copy button + tooltip */
+
+/* Reserve room for the absolutely-positioned button so the branch name and the
+   "default" badge truncate/wrap before the icon rather than sitting under it.
+   The button occupies right: 8px + 24px width = 32px; pad a little beyond that. */
+.cb-has-copy-btn {
+  padding-right: 38px !important;
+}
+
+.cb-copy-branch-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fgColor-muted, #59636e);
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease;
+}
+
+.cb-copy-branch-btn:hover {
+  opacity: 1;
+  background: var(--bgColor-neutral-muted, rgba(101, 108, 118, 0.12));
+  color: var(--fgColor-default, #1f2328);
+}
+
+.cb-copy-branch-btn:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--fgColor-accent, #0969da);
+  outline-offset: -1px;
+}
+
+.cb-copy-branch-btn.cb-copied {
+  opacity: 1;
+  color: var(--fgColor-success, #1a7f37);
+}
+
+.cb-copy-branch-btn svg {
+  display: block;
+}
